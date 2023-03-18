@@ -1,3 +1,3 @@
-const NotFound = () => <h1>Not Found</h1>
+const NotFoundRoute = () => <h1>Not Found</h1>
 
-export default NotFound
+export default NotFoundRoute

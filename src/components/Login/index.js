@@ -4,11 +4,11 @@ import Cookies from 'js-cookie'
 const Login = props => {
   const clickOnLoginButton = event => {
     event.preventDefault()
-    Cookies.set('token', '1234', {expires: 30})
+    Cookies.set('jwt_token', 'JWT token', {expires: 1})
     const {history} = props
     history.replace('/')
   }
-  const isCookieAvailable = Cookies.get('token')
+  const isCookieAvailable = Cookies.get('jwt_token')
   if (isCookieAvailable !== undefined) {
     return <Redirect to="/" />
   }

@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom'
 
 const LogoutButton = props => {
   const deleteCookies = () => {
-    Cookies.remove('token')
+    Cookies.remove('jwt_token')
     const {history} = props
     history.replace('/login')
   }
