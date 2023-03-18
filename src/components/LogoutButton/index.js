@@ -1,3 +1,18 @@
-const LogoutButton = () => <button type="button">Logout</button>
+import Cookies from 'js-cookie'
+import {withRouter} from 'react-router-dom'
 
-export default LogoutButton
+const LogoutButton = props => {
+  const deleteCookies = () => {
+    Cookies.remove('token')
+    const {history} = props
+    history.replace('/login')
+  }
+
+  return (
+    <button onClick={deleteCookies} type="button">
+      Logout
+    </button>
+  )
+}
+
+export default withRouter(LogoutButton)
